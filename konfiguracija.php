@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'nazivAPP' => 'Moje kiflice',
+    'nazivAPP' => 'Moje najbolje kiflice',
     'url' => 'http://mojekiflice.hr/',
     'dev' => true,
     'db' =>[

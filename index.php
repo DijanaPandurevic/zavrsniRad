@@ -39,5 +39,4 @@ spl_autoload_register(
         }
 );
 
-
 App::start();
