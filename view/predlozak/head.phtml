@@ -3,4 +3,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo App::config('nazivAPP'); ?></title>
 <link rel="stylesheet" href="<?php echo APP::config('url'); ?>public/css/foundation.css">
-<link rel="stylesheet" href="<?php echo APP::config('url'); ?>public/css/app.css">
+<link rel="stylesheet" href="<?php echo APP::config('url'); ?>public/css/<?php if(APP::config('dev') == true){ echo 'app-dev';}else{echo 'app';} ?>.css">
