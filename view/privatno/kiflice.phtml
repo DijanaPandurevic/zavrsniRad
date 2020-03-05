@@ -1,0 +1,40 @@
+Ovdje ćemo raspisati kiflice iz baze
+<?php
+//1. korak spojiti se na bazu - napraviti vezu na bazu
+$veza=DB::getInstanca();
+//2. korak pripremiti upit (new script)
+$izraz = $veza->prepare('select naziv,opis,cijena from kiflica;');
+//3. korak izvršiti upit na tablicu (kiflica)
+$izraz->execute();
+//4. korak dohvatiti (fetch) rezultate upita i spremiti ih u varijablu $
+$rezultat=$izraz->fetchAll();
+//5. korak napraviti prikaz u .phtml (ovom)
+?>
+
+<table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Cijena</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($rezultat as $redpodataka){
+        echo "<tr>";
+            echo "<td>" . $redpodataka->naziv . "</td>";
+            echo "<td>" . $redpodataka->opis . "</td>";
+            echo "<td>" . $redpodataka->cijena . "</td>";
+        echo "</tr>";
+    }
+    ?>
+    </tbody>
+</table>
+
+<?php
+/*
+print_r($rezultat);
+*/
+?>
+

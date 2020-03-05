@@ -38,3 +38,20 @@ create table narudzba(
 alter table narudzba add foreign key (korisnik) references korisnik(sifra);
 alter table stavka add foreign key (narudzba) references narudzba(sifra);
 alter table stavka add foreign key (kiflica) references kiflica(sifra);
+
+
+insert into korisnik(ime,prezime,email,lozinka,uloga)
+values('Dijana','Pandurevic','dijanapandurevic@gmail.com','$2y$10$QHa5VnEZOOD0ixKz/me29OO6ze1XnCgE.fUk0UU3/DWYVugQWfOq2','admin'),
+('neki','korisnik','neki@email','$2y$10$QHa5VnEZOOD0ixKz/me29OO6ze1XnCgE.fUk0UU3/DWYVugQWfOq2','user');
+
+insert into narudzba(datum_narudzbe,vrijeme_isporuke)
+values('2020-02-22','2020-02-22-18'),
+('2020-02-25','2020-02-25-12');
+
+insert into kiflica(naziv,opis,`URL_slika`,cijena)
+values('prazne','slane','ggggg','1.00'),
+('punjene','sunkaisir','hhhh','1.40');
+
+insert into stavka(kolicina)
+values('50'), 
+('150');
