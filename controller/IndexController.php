@@ -30,12 +30,19 @@ class IndexController extends Controller
             ]);
             return;
         }
-        $veza=DB::getInstanca();
+        //$veza = new PDO('mysql:host=localhost;dbname=edunovapp20;charset=utf8',
+        //'edunova','edunova');
 
-        $izraz = $veza->prepare('select * from korisnik where email = :email;');
+        $veza = DB::getInstanca();
+
+        	    //sql INJECTION PROBLEM
+        //$veza->query('select lozinka from operater 
+        //              where email=\'' . $_POST['email'] . '\';');
+
+        $izraz = $veza->prepare('select * from operater where email = :email and aktivan=true;');
 
         $izraz->execute(['email'=>$_POST['email']]);
-
+        //$rezultat=$izraz->fetch(PDO::FETCH_OBJ);
         $rezultat=$izraz->fetch();
 
         if($rezultat==null){

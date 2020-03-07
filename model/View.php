@@ -15,7 +15,7 @@ class View
         include BP . 'view' . DIRECTORY_SEPARATOR . $stranica . '.phtml';
         $sadrzaj = ob_get_clean(); //sve što si skupio dodjeli varijabli $sadrzaj
 
-        echo $sadrzaj;
+        //echo $sadrzaj;
         
         include BP . 'view' . DIRECTORY_SEPARATOR . $this->predlozak . '.phtml';
     }

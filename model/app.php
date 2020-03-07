@@ -25,7 +25,7 @@ class App
 
         $funkcija='';
         if(!isset($djelovi[2]) || $djelovi[2]===''){
-                $funkcija='index';
+                $funkcija='';
             }else{
                 $funkcija=$djelovi[2];
         }
