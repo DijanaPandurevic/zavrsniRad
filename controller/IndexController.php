@@ -96,7 +96,7 @@ class IndexController extends Controller
     {
         $niz=[];
         $s=new stdClass();
-        $s->naziv='Slane kiflice';
+        $s->naziv='Moje kiflice';
         $s->sifra=1;
         $niz[]=$s;
         //$this->view->render('okiflicama',$niz);
@@ -106,7 +106,7 @@ class IndexController extends Controller
     public function test()
     {
      echo password_hash('',PASSWORD_BCRYPT);
-      // echo md5('mojaMala'); NE KORISTITI
+      // echo md5('ne'); NE KORISTITI
     } 
     
 } 

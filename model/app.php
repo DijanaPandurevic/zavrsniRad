@@ -5,11 +5,11 @@ class App
     public static function start()
     {
        $ruta = Request::getRuta();
-        // echo $ruta;   /index/prijava
+        //echo $ruta;   /index/prijava
 
         $djelovi = explode('/',$ruta);
 
-    // print_r($djelovi);
+    //print_r($djelovi);
 
         $klasa='';
         if(!isset($djelovi[1]) || $djelovi[1]===''){
@@ -21,11 +21,10 @@ class App
         // $klasa= $klasa . 'Controller'; - duži način
         $klasa.='Controller';
 
-        // echo $klasa;
 
         $funkcija='';
         if(!isset($djelovi[2]) || $djelovi[2]===''){
-                $funkcija='';
+                $funkcija='index';
             }else{
                 $funkcija=$djelovi[2];
         }
@@ -38,7 +37,7 @@ class App
                 $parametar1=$djelovi[3];
         }
 */
-        //echo $klasa . '->' . $funkcija . '();';
+      // echo $klasa . '->' . $funkcija . '();';
 
 
         if(class_exists($klasa) && method_exists($klasa,$funkcija)){
@@ -56,7 +55,7 @@ class App
             $instanca->$funkcija();
         }else{
             header('HTTP/1.0 404 Not Found');
-           // echo 'HGSS';
+        echo 'HGSS';
         }
 
 
